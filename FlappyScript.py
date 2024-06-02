@@ -34,4 +34,27 @@ class Bird:
         self.img = self.IMGS[0]
 
     def jump(self):
+        self.velocity = -10.5
+        self.tick_count = 0
+        self.height = self.y
+
+    def move(self):
+        self.tick_count += 1
+
+        d = self.velocity * self.tick_count + 1.5*self.tick_count**2
+
+        if d >= 16:
+            d = 16
         
+        if d < 0:
+            d -= 2
+
+        self.y += d
+
+
+    
+
+
+
+
+    
